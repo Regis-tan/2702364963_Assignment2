@@ -2,12 +2,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Assignment 2 - Home</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="scripts.js">
 </head>
-<body>
+<body style="background-image: url(bg.png)">
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+        </ul>
+        </div>
+        <div class="rightNav">
+            <p>Registan - 2702364963</p>
+        </div>
+    </nav>
+
+    <div style="height: 50%; width: 40%; background-color: rgb(102, 102, 102); border-radius: 10px; margin: 40px; padding: 20px">
+        <h1><u>WADS Assignment-2</u></h1>
+        <h3 style="margin: 10px;">This is the home page of my Web Application Development and Security assignment 2.</h3>
+
+        <br><br><br><br>
+
+        <p style="margin-left:100px">rating: <span id="ratingValue">0</span></p>
+        <div class="stars">
+            <input type="radio" id="star5" name="rating" value="5"><label for="star5">★</label>
+            <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+            <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+            <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+            <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+        </div>
+        <br>
+        <button onclick="showText()" style="background-color: rgb(111, 111, 239); padding: 5px;"><p>animation button</p></button>
+        <p id="hiddenText" class="hidden-text" style="color: red;">animation</p>
+    </div>
     <script>
+        document.querySelectorAll('.stars input').forEach(input => {
+                input.addEventListener('change', function() {
+                    document.getElementById('ratingValue').textContent = this.value;
+                });
+            });
+        function showText() {
+            const text = document.getElementById('hiddenText');
+            text.style.display = 'block';
+            text.style.animation = 'spin 2s linear';
+        }
     </script>
 </body>
 </html>
